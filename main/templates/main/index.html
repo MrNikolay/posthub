@@ -1,0 +1,37 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- Слово "Посты" между Шапкой и контентом - "main" -->
+<p id="text-posts">Посты</p>
+
+<main>
+    {% if is_posts %}
+    <!-- Если посты есть -->
+    <p>Всего постов: {{ posts_count }}</p>
+    {% for post in posts %}
+    {% if post.is_published %}
+    <!-- Если пост опубликован -->
+    <div class="post" title="Post | Создатель: {{ post.creator }} | Заголовок: {{ post.title }}">
+        <div class="post-creator">{{ post.creator }}</div>
+        <div class="post-header">
+            <p class="post-header-text">{{ post.title }}</p>
+        </div>
+        <p class="short_text">{{ post.short }}</p>
+        <a href="{{ post.get_absolute_url }}"><p class="post-read">Читать пост</p></a>
+        <p class="time-create">{{ post.time_create }}</p>
+    </div>
+    {% endif %}
+    {% endfor %}
+    <a href="#top" id="go-top-text" title="Нажми чтобы перейти в самый верх страницы">Наверх</a>
+    {% else %}
+    <!-- Если постов нет -->
+    <p id="posts-empty">404<br>В данный момент постов нет</p>
+    {% endif %}
+</main>
+
+</body>
+
+</html>
+
+{% endblock content %}

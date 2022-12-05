@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap');
+/* font-family: 'Open Sans', sans-serif; */
+/* font-weight's: 300; 400; 500; 700 */
+
+* { /* Обнуление */
+    margin: 0;
+    padding: 0;
+}
+
+body { /* Тело страницы */
+    background-color: rgb(229, 240, 232);
+}
+
+p, a { /* Объявляем шрифт для всех текстов с тегами p или a */
+    font-family: 'Open Sans', sans-serif; 
+}
+
+header { /* Настройки шапки */
+    height: 100px;
+    background-color: silver;
+}
+
+header a { /* Убираем полосочку у всех ссылок */
+    text-decoration: none;
+}
+
+header li { /* Настройки меню */
+    position: relative;
+    left: 42%;
+    top: 25px;
+    display: inline;
+    margin-left: 50px;
+    font-size: 24px;
+}
+
+header li a { /* цвет ссылок в меню */
+    color: rgb(46, 0, 119);
+}
+
+header li a:hover { /* Цвет ссылок в меню при наводке */
+    color:rgb(94, 26, 204)
+}
+
+main { /* Блок main */
+    position: absolute;
+    top: 250px;
+    left: 25%;
+    display: block;
+    background-color: rgb(139, 139, 139);
+    width: 50%;
+    min-height: 600px;
+    height: auto;
+}
+
+
+main a {
+    text-decoration: none;
+}
+
+.post, #posts-empty { /* Всё что в блоке main (посты например) */
+    margin: 100px;
+}
+
+.authorization { /* Позиция авторизационных блоков */
+    position: absolute;
+    right: 0px;
+    top: 15px;
+}
+
+.authorization a { /* Ссылки текстов авторизации */
+    color: black;
+}
+
+/* НАСТРОЙКИ ПОСТОВ */
+
+.post {
+    background-color: rgb(220, 220, 220);
+    width: 750px;
+    height: 350px;
+    color: black;
+}
+
+
+.post-creator {
+    padding: 10px;
+    display: inline-block;
+    vertical-align: top;
+    background-color: silver;
+    font-family: 'Open Sans', sans-serif; 
+    font-size: 24px;
+    max-width: 300px;
+    float: left;
+}
+
+.post-header-text {
+    position: relative;
+    top: 10px;
+    text-align: center;
+    font-size: 24px;
+}
+
+.short_text {
+    font-size: 20px;
+    margin: 25px;
+    margin-top: 50px;
+}
+
+.post-read {
+    position: relative;
+    left: 20px;
+    top: 15px;
+}
+
+.time-create {
+    margin-right: 10px;
+    text-align: right;
+}
+
+/* ---------------- */
+
+#title { /* Лого - "PostHub" В хеадере */
+    position: absolute;
+    left: 32%;
+    top: 10px;
+    color: black;
+    font-size: 42px;
+    font-weight: 400;
+}
+
+#login { /* Блок - "Вход" */
+    padding: 10px;
+    display: inline-block;
+    background-color: rgb(56, 111, 194);
+    width: 100px;
+    border: solid 2px black;
+}
+
+#register { /* Блок - "Регистрация" */
+    position: relative;
+    right: 5px;
+    padding: 10px;
+    display: inline-block;
+    background-color: rgb(45, 192, 45);
+    width: 200px;
+    border: solid 2px black;
+}
+
+#login p, #register p { /* Настройки текстов авторизации */
+    text-align: center;
+    font-size: 24px;
+}
+
+#text-posts { /* Текст - "Посты" между header и main */
+    position: absolute;
+    top: 150px;
+    left: 47%;
+    font-size: 36px;
+}
+
+#go-top-text { /* Кнопка - "Наверх" */
+    text-decoration: none;
+    position: fixed;
+    right: 20px;
+    bottom: 10px;
+    font-size: 36px;
+}
+
+#posts-empty { /* Если постов нет */
+    position: relative;
+    top: 150px;
+    text-align: center;
+    font-size: 48px;
+}
+
+#log-out { /* Кнопка выхода из уч. записи. */
+    position: relative;
+    text-align: center;
+    right: 50px;
+    background-color: rgb(209, 0, 0);
+    width: 100px;
+    padding: 10px;
+} 
+
+#log-out p {
+    font-size: 24px;
+}
+
+/* СТИЛИ ОФОРМЛЕНИЯ ДЛЯ СТРАНИЦЫ ПРОСМОТРА ПОСТА */
+
+.view-text {
+    margin: 50px;
+    font-size: 28px;
+}
+
+.view-header {
+    text-align: center;
+    background-color: rgb(202, 211, 205);
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 500;
+    font-size: 28px;
+}
+
+#view-creator {
+    position: relative;
+    bottom: 15px;
+    right: 740px;
+}
+
+#view-title {
+    position: relative;
+    display: inline-block;
+    top: 35px;
+}
+
+#view-time {
+    position: relative;
+    right: 780px;
+    font-size: 21px;
+    bottom: 5px;
+}
+
+/* ---------- */

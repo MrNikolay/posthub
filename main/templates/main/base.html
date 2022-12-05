@@ -1,0 +1,61 @@
+{% load static %}
+<!-- PostHub 'base.html' -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    <!-- Якорь для ссылки "Наверх" -->
+    <a name="top"></a>
+
+     <!-- Меню -->
+    <div class="fixed">
+        <!-- Шапка -->
+        <header>
+            <!-- Лого в шапке -->
+            <a href="{% url 'home' %}"><span id="title">PostHub</span></a>
+
+            <menu>
+                <!-- Само меню страниц -->
+                <ul>
+                    <!-- Ссылка на главную страницу -->
+                    <li><a href="{% url 'home' %}">Главная</a></li>
+                    <!-- Ссылка на страницу - "Добавить пост" -->
+                    <li><a href="{% url 'addpost' %}">Добавить пост</a></li>
+                </ul>
+            </menu>
+            <!-- Блок входа и регистрации -->
+            <div class="authorization">
+                {% if is_user_auth %}
+                <!-- Если пользователь авторизован -->
+                <div id="log-out">
+                    <!-- ! РЕАЛИЗОВАТЬ ! -->
+                    <p><a href="#">Выйти</a></p>
+                </div>
+                {% else %}
+                <!-- Если пользователь не авторизован -->
+                <div id="login">
+                    <p><a href="{% url 'login' %}">Вход</a></p>
+                </div>
+                <div id="register">
+                    <p><a href="{% url 'register' %}">Регистрация</a></p>
+                </div>
+                {% endif %}
+            </div>
+        </header>
+    </div>
+    
+    <!-- Контент страницы (вставляем сюда доп. страницы) -->
+    {% block content %}
+    {% endblock content %}
+
+</body>
+
+</html>
