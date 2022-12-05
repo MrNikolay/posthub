@@ -1,14 +1,16 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
 
+from . import cfg
+
 
 # ---- Получение данных для страниц ----
 
 class GetData:
     """Класс сбора нужных данных для функций контроллеров"""
     
-    is_user_auth = False # Тест атрибут (пользователь авторизован?)
-    
+    is_user_auth = cfg.is_user_auth # авторизован ли пользователь
+
     # Получение данных для Главной страницы
     def index_data():
         title = 'PostHub - Home'
